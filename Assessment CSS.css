@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: white;
+}
+h1,h2,h3,h4,h5,p{
+    font-weight: normal;
+    margin: 0;
+}
+.imageEffects{
+    z-index: -1;
+    position: relative;
+    display: inline-block;
+
+    &:after {
+      content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-collapse: separate;
+        box-shadow: inset 0 0 10vw 5vw rgba(0,0,0,1);
+    }
+}
+.highlightedProjects{
+    position: relative;
+    text-align: left;
+    padding: 1vw;
+}
+.projectInformation{
+    position: absolute;
+    bottom: 5vh;
+    left: 3vw;   
+    text-shadow: 2px 2px #000000; 
+}
+.projectInformation h3{
+    font-size: 4.5vh;
+}
+.projectInformation h4{
+    font-size: 3.5vh;
+}
+header{
+    position: sticky;
+    top: 0px;
+    font-size: 5.5vh;
+    background-color: black;
+    z-index: 1;
+}
+.sectionTitle{
+    position: absolute;
+    top: 20vh;
+    left: 3vw;
+    font-size: 5vh;
+    text-shadow: 2px 2px #000000;
+}
+.projectImage{
+    width: 98vw;
+    height: 82vh;
+    object-fit: cover;
+}
+
+.slideshowPosition{
+    position: absolute;
+    bottom: 5vh;
+    left: 50%;
+    font-size: 3.5vh;
+    transform: translate(-50%);
+    font-size: 2vh;
+}
+.slideshowPosition p{
+    display: inline-block;
+}
+.back{
+    position: absolute;
+    left: 3vh;
+    top: 50%;
+    font-size: 3.5vh;
+    transform: translate(0, -50%);
+}
+.forward{
+    position: absolute;
+    right: 3vh;
+    top: 50%;
+    font-size: 3.5vh;
+    transform: translate(0, -50%);
+}
+.inline{
+    display: inline-block;
+}
+.p-b-10{
+    padding-bottom: 100px;
+}
