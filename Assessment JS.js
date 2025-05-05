@@ -29,6 +29,14 @@ project.addTags("Game");
 
 projectList.push(project);
 
+project = new Project("Darkest Nights", "Images/OGc84P.png");
+
+project.addTags("Application");
+project.addTags("Game");
+project.addTags("Unity");
+
+projectList.push(project);
+
 function Project(name, image){
     this.name = name;
     this.image = image;
@@ -42,22 +50,50 @@ function Project(name, image){
 
 
 setCurrentSlide(currentSlide);
+renderWebsite();
+
+function separateTags(projectIndex){
+    var projectTags = "";
+
+    for(var i = 0; i < projectList[projectIndex].tags.length; i++){
+        if(i + 1 < projectList[projectIndex].tags.length && i + 1 <= 2)
+            projectTags += projectList[projectIndex].tags[i] + " &#9900; ";
+        else if(i + 1 > 3){
+            projectTags += " ..."; 
+            break           
+        }else 
+            projectTags += projectList[projectIndex].tags[i];
+    }
+
+    return(projectTags)
+}
+
+function renderWebsite(){
+    for(var i = 0; i < projectList.length; i++){      
+        document.getElementById("projectsContainer").innerHTML += `
+            <div class = "project">
+                <div class = "projectImage">
+                    <img src = "${projectList[i].image}"/>
+                </div>
+
+                <div>
+                    <h1>${projectList[i].name}</h1>                    
+                </div>
+                
+                <div class = "tagsContainer">
+                    <h3 class = "tags">${separateTags(i)}</h3>
+                </div>
+            </div>
+        `
+    }
+    
+}
 
 
 function setCurrentSlide(slideNumber){
-
-    var projectTags = "";
-
-    for(var i = 0; i < projectList[slideNumber].tags.length; i++){
-        if(i + 1 < projectList[slideNumber].tags.length)
-            projectTags += projectList[slideNumber].tags[i] + " &#9900; ";
-        else
-            projectTags += projectList[slideNumber].tags[i];
-    }
-
     var displayCurrent = "";
 
-    for(var i = 0; i < projectList.length; i++){
+    for(var i = 0; i < projectList.length && i < 4; i++){
         if(i == slideNumber)
             displayCurrent += `<p onclick = setCurrentSlide(${i})>&#9898;</p>`
         else 
@@ -67,7 +103,7 @@ function setCurrentSlide(slideNumber){
     document.getElementById("currentProject").innerHTML = `
         <div class = "projectInformation">
                         <h3>${projectList[slideNumber].name}</h3>
-                        <h4>${projectTags}</h4>
+                        <h4>${separateTags(slideNumber)}</h4>
                     </div>                   
 
                     <div class = "back">
@@ -85,7 +121,7 @@ function setCurrentSlide(slideNumber){
                     <div class = "imageEffects">
                         <img class = "highlightedProjectImage" src = "${projectList[slideNumber].image}" />
                     </div>
-    `;
+    `;                    
 }
 
 function previousSlide(){
@@ -106,4 +142,14 @@ function nextSlide(){
         currentSlide = 0;
         setCurrentSlide(currentSlide);
     }
+}
+
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginRight = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginRight = "0";
 }
