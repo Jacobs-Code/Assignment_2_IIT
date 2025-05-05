@@ -83,7 +83,7 @@ function setCurrentSlide(slideNumber){
                     </div>
 
                     <div class = "imageEffects">
-                        <img class = "projectImage" src = "${projectList[slideNumber].image}" />
+                        <img class = "highlightedProjectImage" src = "${projectList[slideNumber].image}" />
                     </div>
     `;
 }
