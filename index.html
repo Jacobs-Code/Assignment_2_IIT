@@ -4,24 +4,28 @@
 		<title>Portfolio</title>
 	    <link rel="stylesheet" href="Assessment CSS.css" type="text/css"/>
 	</head>
-	<body>
+	<body id = "body">
+
+        <div id = "grayout" onclick = "closePopup()">
+        </div>
+
         <header>
             <h1>Portfolio</h1>
 
-            <h1 id = "menuButton" onclick = "openNav()">&equiv;</h1>                   
+            <h1  id = "menuButton" class = "clickable" onclick = "openNav()">&equiv;</h1>                   
         </header>
 
         <aside>
             <div id="mySidebar" class="sidebar">
                 <a href="javascript:void(0)" class="closebtn" onclick = "closeNav()">×</a>
-                <a href="#">About</a>
-                <a href="#">Portfolio</a>
+                <a href="about.html">About</a>
+                <a href="index.html">Portfolio</a>
             </div>
         </aside>
 
-        <main> 
+       
             
-
+        <main> 
             <div id = "highlightedProjects">    
 
                 <div class = "sectionTitle">
@@ -29,10 +33,13 @@
                 </div>
 
                 <div id = "currentProject"> 
-                                                 
+                                                
                 </div>
             </div>
+
+            <div id = "projectInformation">
                 
+            </div>
         </main>
 
         <section>
@@ -40,6 +47,7 @@
                 
             </div>
         </section>
+        
 
 	</body>
     <script type="text/javascript" src= "Assessment JS.js"></script>

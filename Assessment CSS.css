@@ -4,19 +4,20 @@ body{
     font-family: 'Poppins', sans-serif;
     background-color: black;
     color: white;
-    margin: 0;
+    margin: 0;       
 }
 h1,h2,h3,h4,h5,p{
     font-weight: normal;
     margin: 0;
 }
-.imageEffects{
+#imageEffects{    
     z-index: -1;
     position: relative;
     display: inline-block;
 
     &:after {
       content: "";
+        transition: 0.5s;
         position: absolute;
         display: block;
         top: 0;
@@ -24,25 +25,37 @@ h1,h2,h3,h4,h5,p{
         width: 100%;
         height: 100%;
         border-collapse: separate;
-        box-shadow: inset 0 0 10vw 5vw rgba(0,0,0,1);
+        box-shadow: inset 0 0 10vw 5vw rgba(0,0,0,0.7);
     }
+}
+#imageEffects.darken:after{
+    box-shadow: inset 0 0 10vw 30vw rgba(0,0,0,1)
+}
+.opensInfo{
+    position: absolute;
+    z-index: 1;
+    width: 98vw;
+    height: 82vh;
 }
 .highlightedProjects{
     position: relative;
     text-align: left;
     padding: 1vw;
+    margin-bottom: 0;
 }
 .projectInformation{
     position: absolute;
     bottom: 5vh;
     left: 3vw;   
-    text-shadow: 2px 2px #000000; 
+    text-shadow: 0.1vh 0.2vw #000000;
 }
 .projectInformation h3{
     font-size: 4.5vh;
+    z-index: 2;
 }
 .projectInformation h4{
     font-size: 3.5vh;
+    z-index: 2;
 }
 header{
     position: sticky;
@@ -51,8 +64,8 @@ header{
     right: 0;
     font-size: 5vh;
     background-color: black;
-    z-index: 1;
-    box-shadow: 0px 0px 20px 3px #474747;
+    z-index: 3;
+    box-shadow: 0 0 5vh 0.5vh #474747;
     padding-left: 3vw;
 }
 header h1{
@@ -67,12 +80,14 @@ header h1{
     top: 20vh;
     left: 3vw;
     font-size: 5vh;
-    text-shadow: 2px 2px #000000;
+    text-shadow: 0.1vh 0.2vw #000000;
 }
 .highlightedProjectImage{
-    width: 98vw;
+    width: 99vw;
     height: 82vh;
     object-fit: cover;
+    z-index: -3;
+    margin-right: 0;
 }
 .slideshowPosition{
     position: absolute;
@@ -81,6 +96,7 @@ header h1{
     font-size: 3.5vh;
     transform: translate(-50%);
     font-size: 2vh;
+    z-index: 2;
 }
 .slideshowPosition p{
     display: inline-block;
@@ -91,6 +107,7 @@ header h1{
     top: 50%;
     font-size: 3.5vh;
     transform: translate(0, -50%);
+    z-index: 2;
 }
 .forward{
     position: absolute;
@@ -98,11 +115,12 @@ header h1{
     top: 50%;
     font-size: 3.5vh;
     transform: translate(0, -50%);
+    z-index: 2;
 }
 .project, #projectsContainer{
     display: grid;
     grid-template-columns: 49.5% 49.5%;
-    gap: 20px;
+    gap: 1vw;
     position: relative;
 }
 .projectImage{
@@ -112,8 +130,8 @@ header h1{
     width: 100%;
     object-fit: cover;
     height: 20vh;
-    padding-top: 7px;
-    padding-left: 7px;
+    padding-top: 0.6vh;
+    padding-left: 0.6vh;
 }
 .tags{
     position: absolute;
@@ -121,7 +139,7 @@ header h1{
     transform: translate(0, -50%);
 }
 section{
-    border-top: 1px solid rgba(255, 255, 255, 0.217);
+    border-top: 0.1vh solid rgba(255, 255, 255, 0.509);
     padding-top: 5vh;
     padding-bottom: 5vh;
     padding-left: 1vw;
@@ -129,20 +147,26 @@ section{
 }
 .project{
     background-color: rgba(255, 255, 255, 0.217);
-    box-shadow: 0px 0px 20px 3px #474747;
+    box-shadow: 0 0 2vh 0.5vh #474747;
+}
+.project h4{
+    font-size: 3.5vh;
+}
+.project h5{
+    font-size: 3vh;
 }
 .sidebar{
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     top: 0;
     right: 0;
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;    
-    box-shadow: 0px 0px 20px 3px #474747;
+    padding-top: 6vh;    
+    box-shadow: 0 0 5vh 0.5vh #474747;
 }
 .sidebar a{
     padding: 8px 8px 8px 32px;
@@ -160,5 +184,80 @@ section{
     margin-left: 50px;
 }
 .sidebar a:hover{
-    color: #aaaaaadc;    
+    color: #aaaaaadc; 
 }
+.clickable{
+    transition: 0.3s;
+}
+.clickable:hover{
+    color: #aaaaaadc; 
+    cursor: pointer;
+}
+.project:hover{
+    cursor: pointer;
+    transform: scale(1.007);
+}
+#projectInformation{
+    z-index: 4;
+    position: fixed;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 5vh 0.5vh #474747;
+    width: 0;     
+    border: 0.1vw solid rgba(255, 255, 255, 0.509);
+    border-radius: 2vw;
+}
+#projectInformation h1{
+    font-size: 3vh;
+}
+#projectInformation h3{
+    font-size: 2vh;
+}
+#projectInformation div{
+    position: relative;
+    padding: 0.7vw;
+}
+#projectInformation img{
+    width: 40vw;
+    height: 40vh;
+    object-fit: cover;
+    padding-bottom: 0;
+}
+#projectInformation h1{
+    margin-top: 0;
+    padding-bottom: 1vh;
+}
+.grayout{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.75;
+    z-index: 4;
+}
+.description{
+    font-size: 2vh;
+}
+#projectInformation .closebtn{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    z-index: 3;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    font-size: 5vh;
+}
+#projectInformation .closebtn:hover{
+    color: #aaaaaadc;
+    cursor: pointer
+} 
