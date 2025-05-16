@@ -198,6 +198,7 @@ function renderInformation(projectIndex){
         </div>
     `;
     document.getElementById("projectInformation").style.width = "41.8vw";
+    document.getElementById("projectInformation").style.border = "0.1vh solid rgba(255, 255, 255, 0.509)";
     document.getElementById("projectInformation").innerHTML = displayInformation;
     document.getElementById("body").style.overflow = "hidden";
     document.getElementById("grayout").classList.add("grayout");
@@ -207,6 +208,7 @@ function renderInformation(projectIndex){
 
 function closePopup(){    
     document.getElementById("projectInformation").style.width = "0";
+    document.getElementById("projectInformation").style.border = "0";
     document.getElementById("projectInformation").innerHTML = "";
     document.getElementById("body").style.overflow = "auto";
     document.getElementById("grayout").classList.remove("grayout");
