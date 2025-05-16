@@ -37,6 +37,9 @@ project.addTags("Unity");
 
 projectList.push(project);
 
+
+
+
 function Project(name, image, description, githubLink){
     this.name = name;
     this.image = image;
@@ -147,14 +150,18 @@ function previousSlide(){
         document.getElementById("imageEffects").classList.add("darken");    
         setTimeout(() => setCurrentSlide(currentSlide), 250);
     }else{
-        currentSlide = projectList.length - 1;
+        if(projectList.length < 5)
+            currentSlide = projectList.length - 1;
+        else 
+            currentSlide = 3;   
+
         document.getElementById("imageEffects").classList.add("darken");    
         setTimeout(() => setCurrentSlide(currentSlide), 250);
     }
 }
 
 function nextSlide(){
-    if(currentSlide + 1 < projectList.length){
+    if(currentSlide + 1 < projectList.length && currentSlide + 1 < 4){
         currentSlide++;
         document.getElementById("imageEffects").classList.add("darken");    
         setTimeout(() => setCurrentSlide(currentSlide), 250);
