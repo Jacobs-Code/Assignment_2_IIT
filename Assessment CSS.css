@@ -324,7 +324,10 @@ section{
 #home{
     display: grid;
     grid-template-columns: 49.5% 49.5%;
-    position: relative;
+    position: relative;    
+}
+#body{
+    overflow: hidden;
 }
 #homeImg{
     object-fit: cover;
@@ -335,7 +338,8 @@ section{
 }
 .welcome{
     text-align: center;
-    padding-top: 5vh;
+    padding-top: 50%;    
+    transform: translate(0, -40%);
 }
 .welcome p{
     align-self: center;
@@ -408,6 +412,7 @@ section{
 .timeIndicator{
     position: absolute;    
     top: 58%;
+    font-size: 1.2vw;
 }
 .timelineConnector{
     position: absolute;
@@ -417,9 +422,6 @@ section{
     height: 12vh;
     width: 1.5vh;
     z-index: -1;
-}
-.planPoint{
-    position: absolute;   
 }
 .plan{
     background-color: #3c3c3c;
