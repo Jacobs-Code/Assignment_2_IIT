@@ -57,7 +57,7 @@ const repeatNextSlide = () => {
 };
 
 const startRepeating = () => {
-    intervalId = setInterval(repeatNextSlide, 4000);
+    intervalId = setInterval(repeatNextSlide, 5000);
 };
 
 setCurrentSlide(currentSlide);
@@ -132,13 +132,14 @@ function setCurrentSlide(slideNumber){
         <div class = "opensInfo" onclick = "renderInformation(${slideNumber})">
         
         </div>
+        <div class = "projectInformation">
+            <h3>${projectList[slideNumber].name}</h3>
+            <h4>${separateTags(slideNumber)}</h4>
+        </div>
 
         <div id = "imageEffects" class = "darken">
             <img class = "highlightedProjectImage" src = "${projectList[slideNumber].image}" />
-             <div class = "projectInformation">
-                <h3>${projectList[slideNumber].name}</h3>
-                <h4>${separateTags(slideNumber)}</h4>
-            </div> 
+            
         </div>
     `;     
     setTimeout(fadeIn, 50);    
@@ -147,7 +148,7 @@ function setCurrentSlide(slideNumber){
 function previousSlide(){
     if(currentSlide - 1 >= 0){
         currentSlide = currentSlide - 1;
-        document.getElementById("imageEffects").classList.add("darken");    
+        document.getElementById("imageEffects").classList.add("darken"); 
         setTimeout(() => setCurrentSlide(currentSlide), 250);
     }else{
         if(projectList.length < 5)
@@ -155,7 +156,7 @@ function previousSlide(){
         else 
             currentSlide = 3;   
 
-        document.getElementById("imageEffects").classList.add("darken");    
+        document.getElementById("imageEffects").classList.add("darken"); 
         setTimeout(() => setCurrentSlide(currentSlide), 250);
     }
 }
@@ -163,11 +164,11 @@ function previousSlide(){
 function nextSlide(){
     if(currentSlide + 1 < projectList.length && currentSlide + 1 < 4){
         currentSlide++;
-        document.getElementById("imageEffects").classList.add("darken");    
+        document.getElementById("imageEffects").classList.add("darken"); 
         setTimeout(() => setCurrentSlide(currentSlide), 250);
     }else{
         currentSlide = 0;
-        document.getElementById("imageEffects").classList.add("darken");    
+        document.getElementById("imageEffects").classList.add("darken");     
         setTimeout(() => setCurrentSlide(currentSlide), 250);
     }
 }
@@ -208,9 +209,7 @@ function renderInformation(projectIndex){
     document.getElementById("projectInformation").style.border = "0.1vh solid rgba(255, 255, 255, 0.509)";
     document.getElementById("projectInformation").innerHTML = displayInformation;
     document.getElementById("body").style.overflow = "hidden";
-    document.getElementById("grayout").classList.add("grayout");
-    
-    
+    document.getElementById("grayout").classList.add("grayout");    
 }
 
 function closePopup(){    
@@ -222,7 +221,7 @@ function closePopup(){
 }
 
 function fadeIn(){
-    document.getElementById("imageEffects").classList.remove("darken");  
+    document.getElementById("imageEffects").classList.remove("darken");    
 }
 
 function callNextSlide(){

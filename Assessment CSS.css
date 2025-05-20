@@ -5,6 +5,7 @@ body{
     background-color: black;
     color: white;
     margin: 0;       
+    overflow-x: hidden;
 }
 h1,h2,h3,h4,h5,p{
     font-weight: normal;
@@ -37,17 +38,14 @@ h1,h2,h3,h4,h5,p{
     width: 98vw;
     height: 82vh;
 }
-.highlightedProjects{
-    position: relative;
-    text-align: left;
-    padding: 1vw;
+#highlightedProjects{
     margin-bottom: 0;
+    border-bottom: 0.1vh solid rgba(255, 255, 255, 0.509);;
 }
 .projectInformation{
     position: absolute;
     bottom: 5vh;
     left: 3vw;   
-    text-shadow: 0.1vh 0.2vw #000000;
 }
 .projectInformation h3{
     font-size: 4.5vh;
@@ -80,7 +78,7 @@ header h1{
     top: 20vh;
     left: 3vw;
     font-size: 5vh;
-    text-shadow: 0.1vh 0.2vw #000000;
+    color: rgb(115, 35, 226);
 }
 .highlightedProjectImage{
     width: 99vw;
@@ -139,18 +137,18 @@ header h1{
     transform: translate(0, -50%);
 }
 section{
-    border-top: 0.1vh solid rgba(255, 255, 255, 0.509);
     padding-top: 5vh;
     padding-bottom: 5vh;
     padding-left: 1vw;
     padding-right: 1vw;
 }
 .project{
-    background-color: rgba(255, 255, 255, 0.217);
+    background-color: #3c3c3c;
     box-shadow: 0 0 2vh 0.5vh #474747;
 }
 .project h4{
     font-size: 3.5vh;
+    color: rgb(115, 35, 226);
 }
 .project h5{
     font-size: 3vh;
@@ -260,3 +258,195 @@ section{
     color: #aaaaaadc;
     cursor: pointer
 } 
+.about{
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+.myHeadshot{
+    object-fit: cover;
+    height: 50vh;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+#main{
+    padding: 2vw;
+    display: grid;
+    grid-template-columns: 49.5% 49.5%;
+    position: relative;
+}
+.about h1{
+    font-weight: bold;
+    color: rgb(115, 35, 226);
+}
+.about h4{
+    margin-top: 3vh;
+}
+.hobby{
+    background-color: #3c3c3c;
+    box-shadow: 0 0 2vh 0.5vh #474747;
+    padding: 1vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    border-radius: 5vh;
+    text-align: center;
+}
+.photos{
+    width: 50%;
+    aspect-ratio: 1;
+}
+.hobbies{
+    display: grid;
+    gap: 5%;
+    grid-template-columns: 15% 15% 15% 15%;
+    position: relative;
+    translate: 12%;
+}
+#aboutMe{
+    text-align: center;
+    max-width: 50vw;
+    translate: 50%;
+    margin-bottom: 15vh;
+    margin-top: 10vh;
+}
+#aboutMe h2{
+    color: rgb(115, 35, 226);
+    margin-bottom: 1vh;
+    font-weight: bold;
+}
+.hobby h4{
+    text-decoration: underline;
+    color: rgb(115, 35, 226);
+}
+#home{
+    display: grid;
+    grid-template-columns: 49.5% 49.5%;
+    position: relative;
+}
+#homeImg{
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    width: 50vw;
+    height: 85vh;
+}
+.welcome{
+    text-align: center;
+    padding-top: 5vh;
+}
+.welcome p{
+    align-self: center;
+    margin-top: 5vh;
+    max-width: 35vw;
+    translate: 20%;
+}
+.welcome h1{
+    color: rgb(115, 35, 226);
+    font-weight: bold;
+}
+.contents{
+    display: grid;
+    gap: 2%;
+    grid-template-columns: 27% 27% 27%;
+    position: relative;    
+    padding-left: 6.5vw;
+    margin-bottom: 5vh;
+}
+.contents div{
+    background-color: #3c3c3c;
+    box-shadow: 0 0 2vh 0.5vh #474747;
+    padding: 1vw;
+    border-radius: 5vh;
+}
+.contents h4{
+    text-decoration: underline;
+    color: rgb(115, 35, 226);
+}
+.welcomeText{
+    padding-bottom: 5vh;
+}
+
+.contact{
+    display: grid;
+    gap: 7%;
+    grid-template-columns: 5% 5% 5%;
+    position: relative;    
+    translate: 33%;
+    margin-bottom: 5vh;
+}
+.contact div img{
+    width: 5vw;
+    aspect-ratio: 1;
+}
+.contact div:hover{
+    cursor: pointer;
+}
+.contents div:hover{
+    cursor: pointer;
+    transform: scale(1.03);
+}
+#line{
+    margin: 9vh;
+    margin-top: 45vh;
+    border: 1px solid white;
+}
+#dates{
+    margin-top: 9vh;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
+    margin-left: 7vh;
+}
+#dates p{
+    rotate: 45deg;
+}
+.plan{    
+    position: absolute;    
+}
+.timeIndicator{
+    position: absolute;    
+    top: 58%;
+}
+.timelineConnector{
+    position: absolute;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    top: 52%;
+    height: 12vh;
+    width: 1.5vh;
+    z-index: -1;
+}
+.planPoint{
+    position: absolute;   
+}
+.plan{
+    background-color: #3c3c3c;
+    box-shadow: 0 0 2vh 0.5vh #474747;
+    border-radius: 5vh;
+    padding: 1vw;
+    transform: translate(0,-25%);
+}
+.plan:hover{
+    cursor: pointer;
+    transform: translate(0,-25%);
+    padding: 1.1vw;
+}
+#timeline h2{
+    position: absolute;
+    top: 20vh;
+    left: 4vw;
+    color: rgb(115, 35, 226);
+}
+#futureSummary{
+    margin-left: 3vw;
+    margin-top: 10vh;
+}
+#futureSummary h2{
+    color: rgb(115, 35, 226);    
+}
+#futureSummary p{
+    margin-left: 2vw;
+    margin-top: 1vh;
+}

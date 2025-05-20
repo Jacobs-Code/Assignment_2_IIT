@@ -1,7 +1,7 @@
 <!doctype html>
-<html>
+<html>      
 	<head>
-		<title>Portfolio</title>
+		<title>Home</title>
 	    <link rel="stylesheet" href="Assessment CSS.css" type="text/css"/>
 	</head>
 	<body id = "body">
@@ -10,7 +10,7 @@
         </div>
 
         <header>
-            <h1>Portfolio</h1>
+            <h1>Home</h1>
 
             <h1  id = "menuButton" class = "clickable" onclick = "openNav()">&equiv;</h1>                   
         </header>
@@ -18,37 +18,59 @@
         <aside>
             <div id="mySidebar" class="sidebar">
                 <a href="javascript:void(0)" class="closebtn" onclick = "closeNav()">×</a>
+                <a href="index.html">Home</a>
                 <a href="about.html">About</a>
-                <a href="index.html">Portfolio</a>
+                <a href="future.html">Future</a>
+                <a href="portfolio.html">Portfolio</a>
             </div>
         </aside>
 
-       
-            
-        <main> 
-            <div id = "highlightedProjects">    
+        <main id = "home">
+            <div class = "welcome">
+                <div class = "welcomeText">
+                    <h2>Hi, this is</h2>
+                    <h1>Jacob Lowe's </h1>
+                    <h2>Website</h2>
 
-                <div class = "sectionTitle">
-                    <h3>Highlighted Projects</h3>
+                    <p>I aksdas asidajka aksjda js jdsja ljd ajs da ksd ajsds sjasd jsaksd js aksjda!</p>
+                </div>                
+
+                <div class = "contents">
+                    <div onclick = "window.location.href='about.html'">
+                        <h3>About Page</h3>                 
+                    </div>
+
+                    <div onclick = "window.location.href='future.html'">
+                        <h3>Future Plans</h3>
+                    </div>
+
+                    <div onclick = "window.location.href='portfolio.html'">                    
+                        <h3>Portfolio</h3>
+                    </div>
                 </div>
 
-                <div id = "currentProject"> 
-                                                
+                <div class = "contact">
+                    <div>
+                        <img class = "photos" src = "Images/maxresdefault.jpg"/>               
+                    </div>
+
+                    <div>
+                        <img class = "photos" src = "Images/maxresdefault.jpg"/>
+                    </div>
+
+                    <div>                    
+                        <img class = "photos" src = "Images/maxresdefault.jpg"/>
+                    </div>
                 </div>
             </div>
 
-            <div id = "projectInformation">
-                
-            </div>
-        </main>
+            <div>
+                <img id = "homeImg" src = "Images/maxresdefault.jpg"/>
+            </div> 
 
-        <section>
-            <div id = "projectsContainer">    
-                
-            </div>
-        </section>
-        
+              
+        </main>       
 
 	</body>
-    <script type="text/javascript" src= "Assessment JS.js"></script>
+    <script type="text/javascript" src= "about.js"></script>
 </html>
