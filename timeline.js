@@ -82,6 +82,7 @@ function closePopup(){
     document.getElementById("projectInformation").style.width = "0";
     document.getElementById("projectInformation").style.border = "0";
     document.getElementById("projectInformation").innerHTML = "";
+    document.getElementById("projectInformation").style.padding = "0";
     document.getElementById("body").style.overflow = "auto";
     document.getElementById("grayout").classList.remove("grayout");
 }
