@@ -326,7 +326,7 @@ section{
     grid-template-columns: 49.5% 49.5%;
     position: relative;    
 }
-#body{
+#bodyHome{
     overflow: hidden;
 }
 #homeImg{
