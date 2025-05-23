@@ -195,7 +195,7 @@ section{
     cursor: pointer;
     transform: scale(1.007);
 }
-#projectInformation{
+#displayInformation{
     z-index: 4;
     position: fixed;
     background-color: black;
@@ -206,23 +206,23 @@ section{
     width: 0;
     border-radius: 2vw;
 }
-#projectInformation h1{
+#displayInformation h1{
     font-size: 3vh;
 }
-#projectInformation h3{
+#displayInformation h3{
     font-size: 2vh;
 }
-#projectInformation div{
+#displayInformation div{
     position: relative;
     padding: 0.7vw;
 }
-#projectInformation img{
+#displayInformation img{
     width: 40vw;
     height: 40vh;
     object-fit: cover;
     padding-bottom: 0;
 }
-#projectInformation h1{
+#displayInformation h1{
     margin-top: 0;
     padding-bottom: 1vh;
 }
@@ -239,7 +239,7 @@ section{
 .description{
     font-size: 2vh;
 }
-#projectInformation .closebtn{
+#displayInformation .closebtn{
     position: absolute;
     top: 0;
     right: 25px;
@@ -254,7 +254,7 @@ section{
     transition: 0.3s;
     font-size: 5vh;
 }
-#projectInformation .closebtn:hover{
+#displayInformation .closebtn:hover{
     color: #aaaaaadc;
     cursor: pointer
 } 
@@ -294,11 +294,15 @@ section{
     border-radius: 5vh;
     text-align: center;
 }
+.hobby:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
 .photos{
     width: 50%;
     aspect-ratio: 1;
 }
-.hobbies{
+#hobbies{
     display: grid;
     gap: 5%;
     grid-template-columns: 15% 15% 15% 15%;
@@ -307,10 +311,10 @@ section{
 }
 #aboutMe{
     text-align: center;
-    max-width: 50vw;
-    translate: 50%;
-    margin-bottom: 15vh;
-    margin-top: 10vh;
+    max-width: 60vw;
+    translate: 30%;
+    margin-bottom: 10vh;
+    margin-top: 7vh;
 }
 #aboutMe h2{
     color: rgb(115, 35, 226);
@@ -344,8 +348,8 @@ section{
 .welcome p{
     align-self: center;
     margin-top: 5vh;
-    max-width: 35vw;
-    translate: 20%;
+    max-width: 40vw;
+    transform: translate(10%);
 }
 .welcome h1{
     color: rgb(115, 35, 226);
@@ -372,21 +376,22 @@ section{
 .welcomeText{
     padding-bottom: 5vh;
 }
-
 .contact{
     display: grid;
     gap: 7%;
-    grid-template-columns: 5% 5% 5%;
+    grid-template-columns: 5% 5% 5% 5%;
     position: relative;    
-    translate: 33%;
+    translate: 27%;
     margin-bottom: 5vh;
 }
 .contact div img{
     width: 5vw;
     aspect-ratio: 1;
+    border-radius: 50%;
 }
 .contact div:hover{
     cursor: pointer;
+    transform: scale(1.03);
 }
 .contents div:hover{
     cursor: pointer;
@@ -394,7 +399,7 @@ section{
 }
 #line{
     margin: 9vh;
-    margin-top: 45vh;
+    margin-top: 55vh;
     border: 1px solid white;
 }
 #dates{
@@ -411,14 +416,13 @@ section{
 }
 .timeIndicator{
     position: absolute;    
-    top: 58%;
+    top: 68%;
     font-size: 1.2vw;
 }
 .timelineConnector{
     position: absolute;
     border-left: 1px solid white;
     border-top: 1px solid white;
-    top: 52%;
     height: 12vh;
     width: 1.5vh;
     z-index: -1;
@@ -443,7 +447,6 @@ section{
 }
 #futureSummary{
     margin-left: 3vw;
-    margin-top: 10vh;
 }
 #futureSummary h2{
     color: rgb(115, 35, 226);    

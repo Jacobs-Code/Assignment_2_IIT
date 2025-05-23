@@ -4,40 +4,50 @@ var projectList = [];
 
 var project = null;
 
-project = new Project("Valorant", "Images/maxresdefault.jpg", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "https://github.com/Jacobs-Code/Assignment_2_IIT/tree/main");
+project = new Project("Leap of Faith", "Images/LeapOfFaith.png", "Leap of Faith is a 3D platformer/parkour game. The concept is that you play as a robot that fixes systems on a ship but reaching certain points. While going through the game you gain new abilities as you fix the ship. The execution didn't end up demonstrating this to the player in game, the plan was to have the end of each level be a computer that gives lore each time you enter a disk to fix the ship. To move in this game you need to use W, A, S, and D keys to go their respective directions and you the mouse to look around.", "https://github.com/Jacobs-Code/Assignment_2_IIT/tree/main");
 
 project.addTags("Application");
 project.addTags("Game");
-project.addTags("C*");
+project.addTags("C#");
+project.addTags("Unity");
+project.addTags("3D");
 
 projectList.push(project);
 
-project = new Project("Calendar Application", "Images/Screenshot 2025-04-30 115358.png", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "https://github.com/Jacobs-Code/Assignment_2_IIT/tree/main");
+project = new Project("Mirror Ball", "Images/MirrorballBanner.png", "Mirror Ball is a game that I developed where you have 2 balls that are a mirror of each other you navigate around falling blocks to continue. To do so you use your mouse to position one ball and the second ball mirrors its movement.", "MirrorBall.html");
 
 project.addTags("Application");
-project.addTags("Website");
-project.addTags("HTML");
-project.addTags("CSS");
+project.addTags("Game");
 project.addTags("JavaScript");
 
 projectList.push(project);
 
-project = new Project("Pokemon", "Images/9kF9SbfSEKzbgV5oVXiMe.png", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "https://github.com/Jacobs-Code/Assignment_2_IIT/tree/main");
 
-project.addTags("Application");
-project.addTags("Game");
+project = new Project("Aquarium Automation", "Images/Aquaruim.png", "Monitoring system that tracks variables that affect a plant’s growth and will automatically assist, based on data collected by sensors, in maintaining the aquarium's fitness to grow plants.", "https://docs.google.com/document/d/1k3niu9xapbybiv8mqTZmHT5A5jIDxzjmNw034KHPX4s/edit?tab=t.0");
+
+project.addTags("Circuits");
+project.addTags("3D Printing");
+project.addTags("Websites");
 
 projectList.push(project);
 
-project = new Project("Darkest Nights", "Images/OGc84P.png", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "https://github.com/Jacobs-Code/Assignment_2_IIT/tree/main");
+project = new Project("Dark Nights", "Images/DarkNights.png", "Dark Nights is a 2D survival game in which you attempt to maintain all vitals. 1 to 4 changes the held items. During the night the things get tougher, try to collect resources to be able to build a safe place.", "https://github.com/Jacobs-Code/Assignment_2_IIT/tree/main");
 
 project.addTags("Application");
 project.addTags("Game");
 project.addTags("Unity");
+project.addTags("2D");
 
 projectList.push(project);
 
+project = new Project("Nomis", "Images/Nomis.png", "Nomis is a memory game replica of Simon. You have to walk up to the colorful balls to start the game. Wait for the a ball light up and click on it, the it will play 2 in a row. Click the balls in the same order and so on.", "https://github.com/Jacobs-Code/Assignment_2_IIT/tree/main");
 
+project.addTags("Application");
+project.addTags("Game");
+project.addTags("Unity");
+project.addTags("3D");
+
+projectList.push(project);
 
 
 function Project(name, image, description, githubLink){
@@ -70,9 +80,9 @@ function separateTags(projectIndex){
     var projectTags = "";
 
     for(var i = 0; i < projectList[projectIndex].tags.length; i++){
-        if(i + 1 < projectList[projectIndex].tags.length && i + 1 <= 2)
+        if(i + 1 < projectList[projectIndex].tags.length && i + 1 <= 1)
             projectTags += projectList[projectIndex].tags[i] + " &#9900; ";
-        else if(i + 1 > 3){
+        else if(i + 1 > 2){
             projectTags += " ..."; 
             break           
         }else 
@@ -205,17 +215,17 @@ function renderInformation(projectIndex){
             <p><a href="${projectList[projectIndex].githubLink}">Git Hub Link</a></p>
         </div>
     `;
-    document.getElementById("projectInformation").style.width = "41.8vw";
-    document.getElementById("projectInformation").style.border = "0.1vh solid rgba(255, 255, 255, 0.509)";
-    document.getElementById("projectInformation").innerHTML = displayInformation;
+    document.getElementById("displayInformation").style.width = "41.8vw";
+    document.getElementById("displayInformation").style.border = "0.1vh solid rgba(255, 255, 255, 0.509)";
+    document.getElementById("displayInformation").innerHTML = displayInformation;
     document.getElementById("body").style.overflow = "hidden";
     document.getElementById("grayout").classList.add("grayout");    
 }
 
 function closePopup(){    
-    document.getElementById("projectInformation").style.width = "0";
-    document.getElementById("projectInformation").style.border = "0";
-    document.getElementById("projectInformation").innerHTML = "";
+    document.getElementById("displayInformation").style.width = "0";
+    document.getElementById("displayInformation").style.border = "0";
+    document.getElementById("displayInformation").innerHTML = "";
     document.getElementById("body").style.overflow = "auto";
     document.getElementById("grayout").classList.remove("grayout");
 }

@@ -1,0 +1,295 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Mirror Ball</title>
+    
+    <style>{padding: 0; margin: 0; } canvas {background: #414141; display: block; margin: 0 auto;border: 1px solid #414141}
+        .obs{
+            
+        }
+    </style>    
+</head>
+<body>
+    <canvas id="myCanvas" width="480" height="210"></canvas>
+        
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            var ballRadius = 10;
+            var obsWidth = 7;
+            var obsHeight = 20;
+            var x2 = canvas.width;
+            var x = canvas.width/2;
+            var y;
+            var color = "#ffffff";
+            var color2 = "#414141";
+            var b_color = "#0095DD";
+            var score = 0;
+            var highScore = 0;
+            
+            var l_Obs = [];
+            
+            var buttonWidth = 150;
+            var buttonHight = 25;
+            var buttonX = (canvas.width/2)- (buttonWidth/2);
+            var buttonY = (canvas.height/2)-(buttonHight/2);
+            
+            var r_Obs = [];
+            
+            var ObsLength = 5;
+            var ObsAvtive = 0;
+            var screen = 1;
+            var isHovering = false;
+            
+            for(var o = 0; o < ObsLength; o++){
+                r_Obs[o] = {x: (Math.random() * (canvas.width/2 - obsWidth) + canvas.width/2), y: 0};
+                l_Obs[o] = {x: (Math.random() * (canvas.width/2 - obsWidth)), y: 0};
+            }
+            document.addEventListener("mousedown", clickOnButton);
+            
+            document.addEventListener("mousemove", mouseMoveHandler, false);
+            
+            function clickOnButton() {
+                   if (screen == 1){
+                        if(x > buttonX && x < buttonX+buttonWidth && y > buttonY && y < buttonY+buttonHight) {
+                            screen = 2; 
+                        } 
+                    } 
+                
+            }
+            function hoverOverButton(){
+                if(x > buttonX && x < buttonX+buttonWidth && y > buttonY && y < buttonY+buttonHight) {
+                    isHovering = true;
+                    
+                }else{
+                    isHovering = false;
+                }
+            }
+            function drawLevelOneButton(){
+                    if (isHovering == false){
+                        b_color = "#0095DD";
+                    }else{
+                        b_color = "#004e74";
+                    }
+                        ctx.beginPath();
+                        ctx.rect(buttonX, buttonY, buttonWidth, buttonHight);   
+                        ctx.fillStyle = b_color;   
+                        ctx.fill();
+                        ctx.closePath();
+                
+                        ctx.font = "16px Arial";
+                        ctx.fillStyle = "#ffffff";
+                        ctx.fillText("PLAY", (canvas.width/2)-20, ((canvas.height/2))+6);  
+                    
+                     
+            }
+            function mouseMoveHandler(e) {
+                if (e.clientX - canvas.offsetLeft < canvas.width && e.clientX - canvas.offsetLeft > 0)
+                x = e.clientX - canvas.offsetLeft;
+                
+                if (e.clientY - canvas.offsetTop < canvas.height && e.clientY - canvas.offsetTop > 0)
+                y = e.clientY - canvas.offsetTop;
+                
+            }
+            
+            function drawBall() {
+                if(x > canvas.width/2){
+                    color = "#414141";
+                    color2 = "#ffffff";
+                }else{
+                    color = "#ffffff";
+                    color2 = "#414141";
+                }
+                
+                ctx.beginPath();
+                ctx.arc(x, y, ballRadius, 0, Math.PI*2);   
+                ctx.fillStyle = color;   
+                ctx.fill();
+                ctx.closePath();
+            }
+            function drawBall2() {
+                ctx.beginPath();
+                ctx.arc(x*-1+x2, y, ballRadius, 0, Math.PI*2);   
+                ctx.fillStyle = color2;   
+                ctx.fill();
+                ctx.closePath();
+            }
+            function drawScore() {
+                ctx.font = "16px Arial";
+                ctx.fillStyle = "#0095DD";
+                ctx.fillText("Score : "+score, 8, 20)
+            }
+            
+            function drawObsticlesRight(){
+                    for(var o = 0; o < ObsAvtive; o++){
+                        r_Obs[o].y += 3;
+                        if (r_Obs[o].y >= canvas.height){
+                            r_Obs[o].y = -1;
+                            r_Obs[o].x = (Math.random() * (canvas.width/2 - obsWidth) + canvas.width/2);
+                        }
+                            
+                        
+                        ctx.beginPath();
+                        ctx.rect(r_Obs[o].x, r_Obs[o].y, obsWidth, obsHeight);   
+                        ctx.fillStyle = "#414141";   
+                        ctx.fill();
+                        ctx.closePath();
+                        
+                    }                    
+            }
+            
+            function drawObsticlesLeft(){
+                    for(var o = 0; o < ObsAvtive; o++){
+                        l_Obs[o].y += 3;
+                        if (l_Obs[o].y >= canvas.height){
+                            l_Obs[o].y = -1;
+                            l_Obs[o].x = (Math.random() * (canvas.width/2 - obsWidth));
+                        }
+                            
+                        
+                        ctx.beginPath();
+                        ctx.rect(l_Obs[o].x, l_Obs[o].y, obsWidth, obsHeight);   
+                        ctx.fillStyle = "#ffffff";   
+                        ctx.fill();
+                        ctx.closePath();
+                        
+                    }                    
+            }
+            
+            function whatObjOnScreen(){
+                if (screen == 2){
+                    ObsAvtive++;
+                    setTimeout(function() {
+                        if (ObsAvtive < ObsLength)
+                            whatObjOnScreen();
+                    }, 500);
+                }else{
+                    setTimeout(function() {
+                        if (ObsAvtive < ObsLength)
+                            whatObjOnScreen();
+                    }, 500); 
+                }
+                               
+            }
+            function collisionDetection() {
+                    for(var o=0; o < ObsAvtive; o++){
+                        var obs = r_Obs[o];
+                        var l_obs = l_Obs[o];
+                            if(x > obs.x-5 && x < obs.x+obsWidth+5 && y > obs.y-5 && y < obs.y+obsHeight+5) {
+                                
+                                if (score > highScore){
+                                    highScore = score;
+                                }
+                                screen = 1;
+                                score = 0;
+                                ObsAvtive = 0;
+                                whatObjOnScreen();
+                                for(var o = 0; o < ObsLength; o++){
+                                    r_Obs[o] = {x: (Math.random() * (canvas.width/2 - obsWidth) + canvas.width/2), y: 0};
+                                    l_Obs[o] = {x: (Math.random() * (canvas.width/2 - obsWidth)), y: 0};
+                                }
+                            }else if(x*-1+x2 > obs.x-5 && x*-1+x2 < obs.x+obsWidth+5 && y > obs.y-5 && y < obs.y+obsHeight+5){
+                                
+                                if (score > highScore){
+                                    highScore = score;
+                                }
+                                screen = 1;
+                                score = 0;
+                                ObsAvtive = 0;
+                                whatObjOnScreen();
+                                for(var o = 0; o < ObsLength; o++){
+                                    r_Obs[o] = {x: (Math.random() * (canvas.width/2 - obsWidth) + canvas.width/2), y: 0};
+                                    l_Obs[o] = {x: (Math.random() * (canvas.width/2 - obsWidth)), y: 0};
+                                }
+                            }
+                        
+                            if(x > l_obs.x-5 && x < l_obs.x+obsWidth+5 && y > l_obs.y-5 && y < l_obs.y+obsHeight+5) {
+                                
+                                if (score > highScore){
+                                    highScore = score;
+                                }
+                                screen = 1;
+                                score = 0;
+                                ObsAvtive = 0;
+                                whatObjOnScreen();
+                                for(var o = 0; o < ObsLength; o++){
+                                    r_Obs[o] = {x: (Math.random() * (canvas.width/2 - obsWidth) + canvas.width/2), y: 0};
+                                    l_Obs[o] = {x: (Math.random() * (canvas.width/2 - obsWidth)), y: 0};
+                                }
+                            }else if(x*-1+x2 > l_obs.x-5 && x*-1+x2 < l_obs.x+obsWidth+5 && y > l_obs.y-5 && y < obs.y+obsHeight+5){
+                                
+                                if (score > highScore){
+                                    highScore = score;
+                                }
+                                screen = 1;
+                                score = 0;
+                                ObsAvtive = 0;
+                                whatObjOnScreen();
+                                for(var o = 0; o < ObsLength; o++){
+                                    r_Obs[o] = {x: (Math.random() * (canvas.width/2 - obsWidth) + canvas.width/2), y: 0};
+                                    l_Obs[o] = {x: (Math.random() * (canvas.width/2 - obsWidth)), y: 0};
+                                }
+                            }
+                    }
+            }
+            
+           function drawTitle() {
+                ctx.font = "40px Arial";
+                ctx.fillStyle = "#ffffff";
+                ctx.fillText("Mirror Ball", (canvas.width/2)-90, ((canvas.height/4)));
+            }     
+            function drawHighScore() {
+                ctx.font = "16px Arial";
+                ctx.fillStyle = "#0095DD";
+                ctx.fillText("High score : "+(highScore), canvas.width-130, 20)
+            }
+            
+            function draw() {
+                if (screen == 1){
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    drawLevelOneButton();
+                    hoverOverButton();
+                    
+                    drawTitle();
+                    
+                    drawHighScore();
+                }if (screen == 2){
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    drawScore();
+                    drawBackground();
+                    
+                    drawBall();
+                    drawBall2();                            
+                    
+                    drawObsticlesRight();
+                    collisionDetection();
+                    drawObsticlesLeft();
+                    
+                }
+                    requestAnimationFrame(draw);
+            }
+            
+                
+            setInterval(function(){
+                if (screen == 2)
+                    score++;
+                
+            },1000);
+            
+            function drawBackground(){
+                ctx.beginPath();
+                ctx.rect(canvas.width/2, 0, canvas.width/2, canvas.height);   
+                ctx.fillStyle = "#ffffff";   
+                ctx.fill();
+                ctx.closePath();
+            }
+            
+            
+            draw();      
+            whatObjOnScreen();
+                       
+        </script>
+        
+    </body>
+</html>
