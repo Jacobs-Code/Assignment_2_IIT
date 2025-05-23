@@ -4,7 +4,7 @@ var projectList = [];
 
 var project = null;
 
-project = new Project("Leap of Faith", "Images/LeapOfFaith.png", "Leap of Faith is a 3D platformer/parkour game. The concept is that you play as a robot that fixes systems on a ship but reaching certain points. While going through the game you gain new abilities as you fix the ship. The execution didn't end up demonstrating this to the player in game, the plan was to have the end of each level be a computer that gives lore each time you enter a disk to fix the ship. To move in this game you need to use W, A, S, and D keys to go their respective directions and you the mouse to look around.", "https://github.com/Jacobs-Code/Assignment_2_IIT/tree/main");
+project = new Project("Leap of Faith", "Images/LeapOfFaith.png", "Leap of Faith is a 3D platformer/parkour game. The concept is that you play as a robot that fixes systems on a ship but reaching certain points. While going through the game you gain new abilities as you fix the ship. The execution didn't end up demonstrating this to the player in game, the plan was to have the end of each level be a computer that gives lore each time you enter a disk to fix the ship. To move in this game you need to use W, A, S, and D keys to go their respective directions and you the mouse to look around.", "https://github.com/Jacobs-Code/Leap-Of-Faith");
 
 project.addTags("Application");
 project.addTags("Game");
@@ -31,7 +31,7 @@ project.addTags("Websites");
 
 projectList.push(project);
 
-project = new Project("Dark Nights", "Images/DarkNights.png", "Dark Nights is a 2D survival game in which you attempt to maintain all vitals. 1 to 4 changes the held items. During the night the things get tougher, try to collect resources to be able to build a safe place.", "https://github.com/Jacobs-Code/Assignment_2_IIT/tree/main");
+project = new Project("Dark Nights", "Images/DarkNights.png", "Dark Nights is a 2D survival game in which you attempt to maintain all vitals. 1 to 4 changes the held items. During the night the things get tougher, try to collect resources to be able to build a safe place.", "https://github.com/Jacobs-Code/DON-game-folder");
 
 project.addTags("Application");
 project.addTags("Game");
@@ -40,7 +40,7 @@ project.addTags("2D");
 
 projectList.push(project);
 
-project = new Project("Nomis", "Images/Nomis.png", "Nomis is a memory game replica of Simon. You have to walk up to the colorful balls to start the game. Wait for the a ball light up and click on it, the it will play 2 in a row. Click the balls in the same order and so on.", "https://github.com/Jacobs-Code/Assignment_2_IIT/tree/main");
+project = new Project("Nomis", "Images/Nomis.png", "Nomis is a memory game replica of Simon. You have to walk up to the colorful balls to start the game. Wait for the a ball light up and click on it, the it will play 2 in a row. Click the balls in the same order and so on.", "https://github.com/Jacobs-Code/Nomis");
 
 project.addTags("Application");
 project.addTags("Game");
@@ -212,7 +212,7 @@ function renderInformation(projectIndex){
 
         <div class = "description">
             <p>${projectList[projectIndex].description}</p>
-            <p><a href="${projectList[projectIndex].githubLink}">Git Hub Link</a></p>
+            <p><a style = "color:white" href="${projectList[projectIndex].githubLink}">More</a></p>
         </div>
     `;
     document.getElementById("displayInformation").style.width = "41.8vw";
