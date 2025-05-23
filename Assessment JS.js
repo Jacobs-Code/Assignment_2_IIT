@@ -148,8 +148,7 @@ function setCurrentSlide(slideNumber){
         </div>
 
         <div id = "imageEffects" class = "darken">
-            <img class = "highlightedProjectImage" src = "${projectList[slideNumber].image}" />
-            
+            <img class = "highlightedProjectImage" src = "${projectList[slideNumber].image}" />            
         </div>
     `;     
     setTimeout(fadeIn, 50);    
@@ -212,7 +211,7 @@ function renderInformation(projectIndex){
 
         <div class = "description">
             <p>${projectList[projectIndex].description}</p>
-            <p><a style = "color:white" href="${projectList[projectIndex].githubLink}">More</a></p>
+            <p><a style = "color:white" href="${projectList[projectIndex].githubLink}" target="_blank">More</a></p>
         </div>
     `;
     document.getElementById("displayInformation").style.width = "41.8vw";
