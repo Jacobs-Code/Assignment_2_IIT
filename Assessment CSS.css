@@ -40,7 +40,7 @@ h1,h2,h3,h4,h5,p{
 }
 #highlightedProjects{
     margin-bottom: 0;
-    border-bottom: 0.1vh solid rgba(255, 255, 255, 0.509);;
+    border-bottom: 0.1vh solid rgba(255, 255, 255, 0.509);
 }
 .projectInformation{
     position: absolute;
@@ -270,7 +270,8 @@ section{
     aspect-ratio: 1 / 1;
     display: block;
     margin: auto;
-    width: 50%;
+    width: 50%;   
+    border: 0.2vw solid white; 
 }
 #main{
     padding: 2vw;
@@ -301,6 +302,7 @@ section{
 .photos{
     width: 50%;
     aspect-ratio: 1;
+    filter: invert(0.9);
 }
 #hobbies{
     display: grid;
@@ -329,16 +331,15 @@ section{
     display: grid;
     grid-template-columns: 49.5% 49.5%;
     position: relative;    
-}
-#bodyHome{
-    overflow: hidden;
+    height: 90vh;
+
 }
 #homeImg{
     object-fit: cover;
-    display: block;
-    margin: auto;
-    width: 50vw;
-    height: 85vh;
+    display: block;    
+    width: 50%;
+    margin-left: 50%;
+    transform: translate(-40%);
 }
 .welcome{
     text-align: center;
@@ -377,17 +378,25 @@ section{
     padding-bottom: 5vh;
 }
 .contact{
+    text-align: center;
     display: grid;
     gap: 7%;
-    grid-template-columns: 5% 5% 5% 5%;
+    grid-template-columns: 5% 5% 5% 5% 5%;
     position: relative;    
-    translate: 27%;
+    translate: 21%;
     margin-bottom: 5vh;
+}
+.contact div{    
+    border: 0.3vh solid white;
+    border-radius: 50%;
+    width: 9vh;
+    height: 9vh;
 }
 .contact div img{
     width: 5vw;
     aspect-ratio: 1;
-    border-radius: 50%;
+    width: 70%;
+    transform: translate(0, 20%);
 }
 .contact div:hover{
     cursor: pointer;
@@ -454,4 +463,89 @@ section{
 #futureSummary p{
     margin-left: 2vw;
     margin-top: 1vh;
+}
+footer{
+    padding: 2vw;
+    padding-top: 1vw;
+    margin-top: 4vw;
+    box-shadow: 0 0 5vh 0.5vh #474747;
+    text-align: center;
+    transform: translate(-0.5%);
+    background-color: black;    
+}
+#contact{
+    text-align: center;   
+    translate: 27%;
+    margin-bottom: 5vh;      
+    display: inline;
+}
+#contact div{    
+    display: inline-block;
+    border: 0.3vh solid white;
+    border-radius: 50%;
+    width: 9vh;
+    height: 9vh;
+}
+#contact div img{
+    width: 5vw;
+    aspect-ratio: 1;
+    width: 70%;
+    transform: translate(0, 20%);
+}
+#contact div:hover{
+    cursor: pointer;
+    transform: scale(1.03);
+}
+#Credits{
+    display: block;
+    text-align: left;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+#CreditsTitle{
+    grid-column: 1 / span 2;
+}
+details{
+    cursor: pointer;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '\2605  ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+#feedback{
+    background-color: #3c3c3c;
+    box-shadow: 0 0 2vh 0.5vh #474747;
+    padding: 2vw;
+    margin: 2vw;
 }

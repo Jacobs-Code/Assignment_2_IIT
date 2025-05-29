@@ -8,6 +8,9 @@
 
         <div id = "grayout" onclick = "closePopup()">
         </div>
+        <div id = "displayInformation">
+            
+        </div>
 
         <header>
             <h1>Home</h1>
@@ -17,7 +20,7 @@
 
         <aside>
             <div id="mySidebar" class="sidebar">
-                <a href="javascript:void(0)" class="closebtn" onclick = "closeNav()">×</a>
+                <a href="javascript:void(0)" class="closebtn" onclick = "closeNav()">&#10005;</a>
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="future.html">Future</a>
@@ -29,11 +32,10 @@
             <div class = "welcome">
                 <div class = "welcomeText">
                     <h2>Hi, this is</h2>
-                    <h1>Jacob Lowe's </h1>                   
-                    <h5>(He/Him) &#9900; 0404 172 954 </h5>
+                    <h1>Jacob Lowe's </h1>                  
                     <h2>Website</h2>
 
-                    <p>I, an inspiring Software developer, am on track to get a Bachelor of I.T by 2028. Experienced in various coding languages via programming projects viewable by through my portfolio.</p>
+                    <p>I, an inspiring Software developer, am on track to get a Bachelor of I.T. by 2028. Experienced in various coding languages via programming projects viewable by through my portfolio.</p>
                 </div>                
 
                 <div class = "contents">
@@ -52,28 +54,76 @@
 
                 <div class = "contact">
                     <div>
-                        <img class = "photos" src = "Images/maxresdefault.jpg"/>               
+                        <a href = "https://www.gmail.com" target="_blank"><img class = "photos" src = "Images/mail.png"/></a>               
                     </div>
 
                     <div>
-                        <img class = "photos" src = "Images/maxresdefault.jpg"/>
+                        <a href = "https://www.linkedin.com" target="_blank"><img class = "photos" src = "Images/linkedin.png"/></a>
                     </div>
 
                     <div>                    
-                        <img class = "photos" src = "Images/maxresdefault.jpg"/>
+                        <a href = "https://www.facebook.com" target="_blank"><img class = "photos" src = "Images/facebook-app-symbol.png"/></a>
                     </div>
                     <div>                    
-                        <img class = "photos" src = "Images/maxresdefault.jpg"/>
+                        <a href = "https://x.com" target="_blank"><img class = "photos" src = "Images/twitter.png"/></a>
+                    </div>                    
+                    <div>                    
+                        <a onclick = "renderInformation()"><img class = "photos" src = "Images/feedback.png"/></a>
                     </div>
                 </div>
             </div>
 
             <div>
-                <img id = "homeImg" src = "Images/maxresdefault.jpg"/>
-            </div> 
+                <img id = "homeImg" src = "Images/bodyshot.png"/>
+            </div>
+        </main> 
+        
+        <footer>
+            <div id = "contact">
+                <div>
+                    <a href = "https://www.gmail.com" target="_blank"><img class = "photos" src = "Images/mail.png"/></a>               
+                </div>
 
-              
-        </main>       
+                <div>
+                    <a href = "https://www.linkedin.com" target="_blank"><img class = "photos" src = "Images/linkedin.png"/></a>
+                </div>
+
+                <div>                    
+                    <a href = "https://www.facebook.com" target="_blank"><img class = "photos" src = "Images/facebook-app-symbol.png"/></a>
+                </div>
+                <div>                    
+                    <a href = "https://x.com" target="_blank"><img class = "photos" src = "Images/twitter.png"/></a>
+                </div>                
+            </div>
+            <p><br>&COPY; Jacob Lowe. Some rights reserved. </p>
+            <br>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="future.html">Future</a>
+            <a href="portfolio.html">Portfolio</a>
+            
+            <div id = "Credits">
+                <div id = "CreditsTitle">
+                    <p>Credits</p>
+                </div>                
+                
+                <div>
+                    <a href="https://www.flaticon.com/free-icons/wrench" title="wrench icons">Wrench icons created by Gregor Cresnar Premium - Flaticon</a>
+                    <br><a href="https://www.flaticon.com/free-icons/saxophone" title="saxophone icons">Saxophone icons created by Freepik - Flaticon</a>
+                    <br><a href="https://www.flaticon.com/free-icons/developer" title="developer icons">Developer icons created by Andika Syaif - Flaticon</a>       
+                    <br><a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by NajmunNahar - Flaticon</a>                    
+                    <br><a href="https://www.flaticon.com/free-icons/footwear" title="footwear icons">Footwear icons created by Smashicons - Flaticon</a>
+                </div>                
+
+                <div>
+                    <br><a href="https://www.flaticon.com/free-icons/gmail" title="gmail icons">Gmail icons created by Zedthy - Flaticon</a>
+                    <br><a href="https://www.flaticon.com/free-icons/tweet" title="tweet icons">Tweet icons created by Freepik - Flaticon</a>
+                    <br><a href="https://www.flaticon.com/free-icons/facebook" title="facebook icons">Facebook icons created by Freepik - Flaticon</a>
+                    <br><a href="https://www.flaticon.com/free-icons/feedback" title="feedback icons">Feedback icons created by Those Icons - Flaticon</a>
+                </div>
+                
+            </div>
+        </footer>
 
 	</body>
     <script type="text/javascript" src= "index.js"></script>

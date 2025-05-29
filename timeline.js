@@ -12,7 +12,7 @@ var plans = [
         [2026, "Diploma", "I am currently studying to get my Diploma/Bachelor Of Information Technology. I am on track by 2026 to get the Diploma.", 2], 
         [2026, "Job Change", "When I have obtained my Diploma of Information Technology, I will attempt to get a job that requires higher qualifications fitting my Diploma. I hope both work experience and higher education qualifications will help me become more employable.", 3], 
         [2027, "Research", "During 2027 I will research job requirements for becoming a software developer. For example, certificate requirements for potential jobs.", 1], 
-        [2028, "Bachelor", "I am currently studying to get my Diploma/Bachelor of Information Technology. I am on track by 2028 to get the Bachelor.", 1],
+        [2028, "Bachelor", "I am currently studying to get my Diploma/Bachelor of Information Technology. I am on track by 2028 to get the Bachelor degree.", 1],
         [2028, "Software Developer", "Now that I have the Bachelor of Information Technology and work experience, I will attempt to find a job position that fits my end goals aligning with my passion of coding.", 2],
         [2029, "Side Projects", "During this time, it is important to maintain side projects, so my creative output and self-esteem isn't reliant on the current development goals of my job. This is due to how large a company can feel. People may not always know how exactly, in a large-scale development plan, their work fits in. Side projects can help increase confidence and self-esteem by filling in these gaps.", 1],
         [2031, "Up skilling", "I personally find joy in creative outputs. I hope to maintain my skills while learning new ways to express my creativity. Although, my focus currently has been on coding to express my creativity, I have also expressed it through 3D design, game development, video editing and more. Learning and mastering new skills will enable me to express my creativity. For example, I hope to further my understanding video editing and mechanical engineering, just to name a few.", 1],
@@ -61,7 +61,7 @@ function displayPlans(){
 function renderInformation(projectIndex){
 
     displayInformation = `
-        <a class="closebtn" onclick = "closePopup()">×</a>
+        <a class="closebtn" onclick = "closePopup()">&#10005;</a>
 
         <div>
             <h1>${plans[projectIndex][1]}</h1>                    

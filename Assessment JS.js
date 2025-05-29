@@ -4,7 +4,7 @@ var projectList = [];
 
 var project = null;
 
-project = new Project("Leap of Faith", "Images/LeapOfFaith.png", "Leap of Faith is a 3D platformer/parkour game. The concept is that you play as a robot that fixes systems on a ship but reaching certain points. While going through the game you gain new abilities as you fix the ship. The execution didn't end up demonstrating this to the player in game, the plan was to have the end of each level be a computer that gives lore each time you enter a disk to fix the ship. To move in this game you need to use W, A, S, and D keys to go their respective directions and you the mouse to look around.", "https://github.com/Jacobs-Code/Leap-Of-Faith");
+project = new Project("Leap of Faith", "Images/LeapOfFaith.png", "Leap of Faith is a 3D platformer/parkour game. The concept is that you play as a robot that fixes systems on a ship buy reaching certain points. While going through the game you gain new abilities as you fix the ship. The execution didn't end up demonstrating this to the player in game, the plan was to have the end of each level be a computer that gives lore each time you enter a disk to fix the ship. To move in this game you need to use W, A, S, and D keys to go their respective directions and you the mouse to look around.", "https://github.com/Jacobs-Code/Leap-Of-Faith");
 
 project.addTags("Application");
 project.addTags("Game");
@@ -195,7 +195,7 @@ function renderInformation(projectIndex){
     var tags = separateTags(projectIndex);
 
     displayInformation = `
-        <a class="closebtn" onclick = "closePopup()">×</a>
+        <a class="closebtn" onclick = "closePopup()">&#10005;</a>
                 
         <div class = "projectImage">
             <img src = "${projectList[projectIndex].image}"/>
