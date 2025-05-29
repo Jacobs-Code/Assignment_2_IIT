@@ -465,13 +465,13 @@ section{
     margin-top: 1vh;
 }
 footer{
-    padding: 2vw;
-    padding-top: 1vw;
+    padding: 3vh 0;
     margin-top: 4vw;
     box-shadow: 0 0 5vh 0.5vh #474747;
     text-align: center;
-    transform: translate(-0.5%);
-    background-color: black;    
+    background-color: black;  
+    margin-left: 0;
+    width: 100%;
 }
 #contact{
     text-align: center;   
@@ -501,6 +501,7 @@ footer{
     text-align: left;
     display: grid;
     grid-template-columns: auto auto;
+    text-align: center;
 }
 #CreditsTitle{
     grid-column: 1 / span 2;
