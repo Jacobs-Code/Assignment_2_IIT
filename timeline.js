@@ -7,10 +7,10 @@ function closeNav() {
 }
 
 var plans = [    
-        [2025.5, "Entery Level", "I am currently looking for an entry level job so I can get experience in the job market. The goal is to gain both work a life experience through this process which will help me grow as a person.", 1], 
+        [2025.5, "Entery Level", "I am currently looking for an entry level job so I can get experience in the job market. The goal is to gain both work and life experience through this process which will help me grow as a person.", 1], 
         [2026, "", "", 1], 
         [2026, "Diploma", "I am currently studying to get my Diploma/Bachelor Of Information Technology. I am on track by 2026 to get the Diploma.", 2], 
-        [2026, "Job Change", "When I have obtained my Diploma of Information Technology, I will attempt to get a job that requires higher qualifications fitting my Diploma. I hope both work experience and higher education qualifications will help me become more employable.", 3], 
+        [2026, "Job Change", "When I have obtained my Diploma of Information Technology, I will attempt to get a job that utilises the skills I have developed during Diploma. I hope both work experience and higher education qualifications will help me become more employable.", 3], 
         [2027, "Research", "During 2027 I will research job requirements for becoming a software developer. For example, certificate requirements for potential jobs.", 1], 
         [2028, "Bachelor", "I am currently studying to get my Diploma/Bachelor of Information Technology. I am on track by 2028 to get the Bachelor degree.", 1],
         [2028, "Software Developer", "Now that I have the Bachelor of Information Technology and work experience, I will attempt to find a job position that fits my end goals aligning with my passion of coding.", 2],
