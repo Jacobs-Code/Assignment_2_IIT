@@ -76,18 +76,27 @@ startRepeating();
 
 
 
-function separateTags(projectIndex){
+function separateTags(projectIndex, allTags){
     var projectTags = "";
-
-    for(var i = 0; i < projectList[projectIndex].tags.length; i++){
-        if(i + 1 < projectList[projectIndex].tags.length && i + 1 <= 1)
-            projectTags += projectList[projectIndex].tags[i] + " &#9900; ";
-        else if(i + 1 > 2){
-            projectTags += " ..."; 
-            break           
-        }else 
-            projectTags += projectList[projectIndex].tags[i];
+    if(!allTags){
+        for(var i = 0; i < projectList[projectIndex].tags.length; i++){
+            if(i + 1 < projectList[projectIndex].tags.length && i + 1 <= 1)
+                projectTags += projectList[projectIndex].tags[i] + " &#9900; ";
+            else if(i + 1 > 2){
+                projectTags += " ..."; 
+                break           
+            }else 
+                projectTags += projectList[projectIndex].tags[i];
+        }   
+    }else{
+        for(var i = 0; i < projectList[projectIndex].tags.length; i++){
+            if(i + 1 < projectList[projectIndex].tags.length){
+                projectTags += projectList[projectIndex].tags[i] + " &#9900; ";                      
+            }else 
+                projectTags += projectList[projectIndex].tags[i];
+        }
     }
+    
 
     return(projectTags)
 }
@@ -106,7 +115,7 @@ function renderWebsite(){
                 </div>
                 
                 <div class = "tagsContainer">
-                    <h5 class = "tags">${separateTags(i)}</h5>
+                    <h5 class = "tags">${separateTags(i, false)}</h5>
                 </div>
             </div>
         `
@@ -144,7 +153,7 @@ function setCurrentSlide(slideNumber){
         </div>
         <div class = "projectInformation">
             <h3>${projectList[slideNumber].name}</h3>
-            <h4>${separateTags(slideNumber)}</h4>
+            <h4>${separateTags(slideNumber, false)}</h4>
         </div>
 
         <div id = "imageEffects" class = "darken">
@@ -192,7 +201,7 @@ function closeNav() {
 
 function renderInformation(projectIndex){
 
-    var tags = separateTags(projectIndex);
+    var tags = separateTags(projectIndex, true);
 
     displayInformation = `
         <a class="closebtn" onclick = "closePopup()">&#10005;</a>
@@ -225,7 +234,7 @@ function closePopup(){
     document.getElementById("displayInformation").style.width = "0";
     document.getElementById("displayInformation").style.border = "0";
     document.getElementById("displayInformation").innerHTML = "";
-    document.getElementById("body").style.overflow = "auto";
+    document.getElementById("body").style.overflowY = "auto";
     document.getElementById("grayout").classList.remove("grayout");
 }
 
