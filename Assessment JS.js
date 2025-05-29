@@ -4,7 +4,7 @@ var projectList = [];
 
 var project = null;
 
-project = new Project("Leap of Faith", "Images/LeapOfFaith.png", "Leap of Faith is a 3D platformer/parkour game. The concept is that you play as a robot that fixes systems on a ship buy reaching certain points. While going through the game you gain new abilities as you fix the ship. The execution didn't end up demonstrating this to the player in game, the plan was to have the end of each level be a computer that gives lore each time you enter a disk to fix the ship. To move in this game you need to use W, A, S, and D keys to go their respective directions and you use the mouse to look around.", "https://github.com/Jacobs-Code/Leap-Of-Faith");
+project = new Project("Leap of Faith", "Images/LeapOfFaith.png", "Leap of Faith is a 3D platformer/parkour game. The concept is that you play as a robot that fixes systems on a ship by reaching certain points. While going through the game you gain new abilities as you fix the ship. The execution didn't end up demonstrating this to the player in game, the plan was to have the end of each level be a computer that gives lore each time you enter a disk to fix the ship. To move in this game you need to use W, A, S, and D keys to go their respective directions and you use the mouse to look around.", "https://github.com/Jacobs-Code/Leap-Of-Faith");
 
 project.addTags("Application");
 project.addTags("Game");
@@ -14,7 +14,7 @@ project.addTags("3D");
 
 projectList.push(project);
 
-project = new Project("Mirror Ball", "Images/MirrorballBanner.png", "Mirror Ball is a game that I developed where you have 2 balls that are a mirror of each other you navigate around falling blocks to progress. To do so you use your mouse to position one ball and the second ball mirrors its movement.", "MirrorBall.html");
+project = new Project("Mirror Ball", "Images/MirrorballBanner.png", "Mirror Ball is a game that I developed where you have 2 balls that are a mirror of each other. You navigate around falling blocks to progress. To do so you use your mouse to position one ball and the second ball mirrors its movement.", "MirrorBall.html");
 
 project.addTags("Application");
 project.addTags("Game");
@@ -40,7 +40,7 @@ project.addTags("2D");
 
 projectList.push(project);
 
-project = new Project("Nomis", "Images/Nomis.png", "Nomis is a memory game simular to Simon. You have to walk up to the colorful balls to start the game. Wait for a ball to light up and click on it. Then it will play 2 in a sequence, click the balls in the same order and so on.", "https://github.com/Jacobs-Code/Nomis");
+project = new Project("Nomis", "Images/Nomis.png", "Nomis is a memory game simular to Simon. You have to walk up to the colourful balls to start the game. Wait for a ball to light up and click on it. Then it will play 2 in a sequence, click the balls in the same order and so on.", "https://github.com/Jacobs-Code/Nomis");
 
 project.addTags("Application");
 project.addTags("Game");
